@@ -37,6 +37,14 @@ const userSchema = new mongoose.Schema({
         ref : "Profile"  // here we are refering to the Profile model
     },
 
+    token : {
+        type : String,
+    },
+
+    resetPassExpires : {
+        type : Date,
+    },
+
     courses : [
         {
             type : mongoose.Schema.Types.ObjectId,
@@ -57,5 +65,5 @@ const userSchema = new mongoose.Schema({
         }
     ]
 })
- 
+
 module.exports = mongoose.model("User", userSchema)
